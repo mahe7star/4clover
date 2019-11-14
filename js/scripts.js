@@ -156,6 +156,7 @@
       let carouselDots = $('.owl-dot');
       carouselDots.hide();
       carouselDots.slice(0,dotsToShow).show();
+      carouselDots.eq(0).trigger('click');
       filteredCards.show();
     }, 300);
     return false;
