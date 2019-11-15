@@ -152,7 +152,16 @@
     setTimeout(function () {
       $('.project-carousel .owl-item').hide();
       let filteredCards = $(selector).closest('.project-carousel .owl-item');
-      let dotsToShow = (filteredCards.length/3).toFixed();
+      let dotsToShow = ``;
+      if(screen.width > 1600) {
+        dotsToShow = (filteredCards.length/4).toFixed();
+      } else if(screen.width > 1200 && screen.width < 1600) {
+        dotsToShow = (filteredCards.length/3).toFixed();
+      } else if(screen.width > 768 && screen.width < 1200) {
+        dotsToShow = (filteredCards.length/2).toFixed();
+      } else {
+        dotsToShow = filteredCards.length;
+      }
       let carouselDots = $('.owl-dot');
       carouselDots.hide();
       carouselDots.slice(0,dotsToShow).show();
