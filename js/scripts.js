@@ -167,9 +167,11 @@
     } else {
       filteredSlides = slidesContainer.find($(selector)).clone();
     }
-    projectCarouselContainer.html(filteredSlides);
-    projectCarouselContainer.trigger('destroy.owl.carousel');
-    initializeProjectCarousel();
+    setTimeout(function() {
+      projectCarouselContainer.html(filteredSlides);
+      projectCarouselContainer.trigger('destroy.owl.carousel');
+      initializeProjectCarousel();
+    }, 300)
   });
 
   $('.popup-with-zoom-anim').magnificPopup({
