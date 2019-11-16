@@ -5,7 +5,7 @@
   const projectCarouselContainer = $('.project-carousel');
   const slidesContainer = $('.js-slides-container');
   projectCarouselContainer.html(slidesContainer.html());
-
+  initializeMagnificPopup();
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     $('html').addClass('mobile');
     mobileDevice = true;
@@ -78,6 +78,21 @@
           items: 4
         }
       }
+    });
+  }
+
+  function initializeMagnificPopup() {
+    $('.popup-with-zoom-anim').magnificPopup({
+      type: 'inline',
+      fixedContentPos: false,
+      fixedBgPos: true,
+      overflowY: 'auto',
+      closeBtnInside: true,
+      preloader: false,
+      midClick: true,
+      fixedContentPos: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-zoom-in'
     });
   }
 
@@ -171,21 +186,11 @@
       projectCarouselContainer.html(filteredSlides);
       projectCarouselContainer.trigger('destroy.owl.carousel');
       initializeProjectCarousel();
+      initializeMagnificPopup();
     }, 300)
   });
 
-  $('.popup-with-zoom-anim').magnificPopup({
-    type: 'inline',
-    fixedContentPos: false,
-    fixedBgPos: true,
-    overflowY: 'auto',
-    closeBtnInside: true,
-    preloader: false,
-    midClick: true,
-    fixedContentPos: true,
-    removalDelay: 300,
-    mainClass: 'my-mfp-zoom-in'
-  });
+
   if ($('.pagepiling').length > 0) {
     $('.pagepiling').pagepiling({
       scrollingSpeed: 280,

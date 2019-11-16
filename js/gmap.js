@@ -6,7 +6,7 @@ var mapLocation=new google.maps.LatLng(29.1376024,76.3194881);var marker;var map
 +'  Karnal - 132001</span>'
 +'</div>'
 +'<div>'
-+'   <span class="text"><strong class="text-dark">Phone:</strong> +91 99962 45152</span>'
++'   <span class="text"><strong class="text-dark">Phone:</strong> 99962-45152</span>'
 +'</div>'
 +'<div class="map-address-row">'
 +'   <span class="map-email">'
